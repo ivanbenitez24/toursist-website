@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Website</title>
+    <link rel="stylesheet" href="About.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo">
+        <a href="index.html">Philippines Tourist Spots</a>
+      </div>
+      
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+
+        <li><a href="index.html">Home</a></li>
+
+        <li><div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Places</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="Luzon.html">Luzon</a>
+            <a href="Visayas.html">Visayas</a>
+            <a href="Mindanao.html">Mindanao</a>
+          </div>
+        </div></li>
+
+        <li><a href="Contact.html">Contact</a></li>
+
+		    <li><a href="About.html">About Website</a></li>
+      </ul>
+
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <div class="banner"></div>
+  <div class="about">
+    <div class="content">
+      <br>
+      <br>
+      <h1>About Website</h1>
+      <br>  
+      <div class="row">
+        <div class="course-col">
+          <h4><b>Mission</b></h4>
+          <p>Website aims to help the foreign and local tourist to have a accurate information and sight to the place that they wanted to visit and also to provide our best service regarding to the place that they concern.</p>
+        </div>
+        
+        <div class="course-col">
+          <h4><b>Vision</b></h4>
+          <p>Aims to improve accessibility of travel destination, make toursim products better and more affordable. Promote a culture of tourism among local residents andIncrease recognition of tourism as effective and efficient tool towards socio-economics development of the Philippines </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <script>
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    menuBtn.onclick = ()=>{
+      navbar.classList.add("show");
+      menuBtn.classList.add("hide");
+      body.classList.add("disabled");
+    }
+    cancelBtn.onclick = ()=>{
+      body.classList.remove("disabled");
+      navbar.classList.remove("show");
+      menuBtn.classList.remove("hide");
+    }
+    window.onscroll = ()=>{
+      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    }
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+</script>
+</body>
+</html>

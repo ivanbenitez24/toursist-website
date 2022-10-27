@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo">
+        <a href="index.html">Philippines Tourist Spots</a>
+      </div>
+      
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+        <li><a href="index.html">Home</a></li>
+        <li><div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Places</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="Luzon.html">Luzon</a>
+            <a href="Visayas.html">Visayas</a>
+            <a href="Mindanao.html">Mindanao</a>
+          </div>
+        </div></li>
+        <li><a href="Contact.html">Contact</a></li>
+		    <li><a href="About.html">About Website</a></li>
+	
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+<!-- Header -->
+<header class="w3-display-container w3-content w3-center" style="max-width:1500px">
+  <img class="w3-image" src="front.png" alt="Me" width="1500" height="600">
+  </div>
+
+  <video width="800" hei autoplay>
+    <source src="vid.mp4" type="video/mp4">
+  </video>
+  
+  <div class="title">Best Places to Visit in the Philippines
+  </div>
+  <p>The Philippines is a destination that is easy to visit multiple times due to its more than 7,000 islands. The most difficult decision you make as a traveler, is figuring out which island to visit first. The Philippines is divided into the three main island groups of Luzon, Visayas, and Mindanao, representing different regions in the country.</p>
+  
+  <p>The scenery in each region of the Philippines ranges from mountainous and tropical to metropolitan. You can enjoy a day of walking the historical colonial streets of the capital city of Manila or catch a rare glimpse of tiny tarsier monkeys at a private sanctuary on the island of Bohol. The steep, plush mountains provide unforgettable hiking experiences.</p>
+  
+  <p>Since you are surrounded by the Pacific Ocean, it's not surprising the Philippines has some of the best beaches in Asia and the scuba diving opportunities are outstanding.</p>
+  <br>
+  
+      </div>
+    </div>
+  
+    <script>
+      const body = document.querySelector("body");
+      const navbar = document.querySelector(".navbar");
+      const menuBtn = document.querySelector(".menu-btn");
+      const cancelBtn = document.querySelector(".cancel-btn");
+      menuBtn.onclick = ()=>{
+        navbar.classList.add("show");
+        menuBtn.classList.add("hide");
+        body.classList.add("disabled");
+      }
+      cancelBtn.onclick = ()=>{
+        body.classList.remove("disabled");
+        navbar.classList.remove("show");
+        menuBtn.classList.remove("hide");
+      }
+      window.onscroll = ()=>{
+        this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+      }
+  
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+  
+    </script>
+  
+  
+  
+  </body>
+  </html>
+  
